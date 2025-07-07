@@ -404,27 +404,36 @@ async def comandos(update: Update, context: ContextTypes.DEFAULT_TYPE):
     if not await is_admin(context, update.message.from_user.id):
         return ConversationHandler.END
     
-    commands_text = """
-⚡ **Comandos de Administração do Bot** ⚡
+    commands_text = """⚙️ <b>Painel do Administrador</b>, configure seu bot com os comandos abaixo.
 
-**/admins** 👑 - Gerencia os administradores do bot
-**/disparo** 🚀 - Envia um plano ou link para todos os usuários
-**/expiracao** ⏳ - Edita a mensagem de expiração do plano
-**/gateway** 💳 - Gerencia as chaves para pagamentos
-**/vip** 🌟 - Define o grupo VIP com os planos
-**/inicio** 🎬 - Define as mensagens de boas-vindas
-**/planos** 📦 - Gerencia os planos do bot
-**/recuperacao** 🔄 - Define a mensagem de recuperação de compra
-**/upsell** 📈 - Gerencia o Upsell
-**/downsell** 💸 - Configura oferta de desconto do upsell
-**/orderbump** 💰 - Gerencia ofertas adicionais nos planos
-**/start** ▶️ - Inicia o bot
-"""
+<b>/inicio</b> 🎬 - Configure as mensagens de início do seu bot
+
+<b>/planos</b> 💰 - Crie planos de pagamento ou remova-os
+
+<b>/gateway</b> 🔐 - Adicione um Gateway para pagamentos
+
+<b>/recuperacao</b> 📤 - Defina mensagens de recuperação de compra
+
+<b>/upsell</b> 📈 - Adicione uma nova nova oferta pós compra
+
+<b>/downsell</b> ✅ - Adicione uma oferta ao recusar o upsell
+
+<b>/orderbump</b> 💸 - Gerencie ofertas adicionais a planos
+
+<b>/disparo</b> 🚀 - Envia mensagens em massa a todos do bot
+
+<b>/adeus</b> 👋 - Personalize a mensagem de plano expirado
+
+<b>/admin</b> 👤 - Adicione novos administradores ao bot
+
+<b>/vip</b> ⭐ - Defina o Grupo VIP que os clientes receberão
+
+<b>/start</b> 🏁 - Comando para iniciar o bot"""
     
     await context.bot.send_message(
         chat_id=update.message.from_user.id, 
         text=commands_text, 
-        parse_mode='Markdown'
+        parse_mode='HTML'
     )
 
     return ConversationHandler.END
