@@ -404,7 +404,7 @@ async def comandos(update: Update, context: ContextTypes.DEFAULT_TYPE):
     if not await is_admin(context, update.message.from_user.id):
         return ConversationHandler.END
     
-    commands_text = """⚙️ <b>Painel do Administrador</b>, configure seu bot com os comandos abaixo.
+    commands_text = """⚙️ <b>𝗣𝗮𝗶𝗻𝗲𝗹 𝗱𝗼 𝗔𝗱𝗺𝗶𝗻𝗶𝘀𝘁𝗿𝗮𝗱𝗼𝗿</b>, configure seu bot com os comandos abaixo.
 
 <b>/inicio</b> 🎬 - Configure as mensagens de início do seu bot
 
