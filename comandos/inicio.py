@@ -17,8 +17,6 @@ cancel_markup = InlineKeyboardMarkup(keyboardc)
 INICIO_ESCOLHA, INICIO_ADICIONAR_OU_DELETAR, INICIO_RECEBER = range(3)
 
 
-# Comando definir inicio
-# /Inicio
 async def inicio(update: Update, context: ContextTypes.DEFAULT_TYPE):
     command_check = await process_command(update, context)
     if not command_check:
@@ -38,7 +36,7 @@ async def inicio(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     reply_markup = InlineKeyboardMarkup(keyboard)
 
-    await update.message.reply_text("🛠️ O que deseja modificar no inicio?", reply_markup=reply_markup)
+    await update.message.reply_text("🛠️ <b>O que deseja modificar no inicio?</b>", reply_markup=reply_markup, parse_mode='HTML')
     return INICIO_ESCOLHA
 
 async def inicio_escolha(update: Update, context: CallbackContext):
