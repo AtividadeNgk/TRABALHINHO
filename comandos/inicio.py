@@ -37,7 +37,7 @@ async def inicio(update: Update, context: ContextTypes.DEFAULT_TYPE):
     reply_markup = InlineKeyboardMarkup(keyboard)
 
     await update.message.reply_text(
-        "🎬 Aqui é a porta de entrada do seu negócio! <b>O que deseja modificar no início?</b>", 
+        "🎬 <b>O que deseja modificar no início?</b>", 
         reply_markup=reply_markup,
         parse_mode='HTML'
     )
